@@ -1,0 +1,15 @@
+[Unit]
+Description=Audio Hub control panel
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=youruser
+WorkingDirectory=/opt/audio-hub
+ExecStart=/usr/bin/python3 /opt/audio-hub/app.py
+Restart=on-failure
+RestartSec=2
+
+[Install]
+WantedBy=multi-user.target

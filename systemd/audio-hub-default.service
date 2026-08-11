@@ -1,0 +1,11 @@
+[Unit]
+Description=Start default audio mode at boot
+After=network-online.target sound.target
+Wants=network-online.target
+
+[Service]
+Type=oneshot
+ExecStart=/usr/local/bin/audio-mode.sh spotify
+
+[Install]
+WantedBy=multi-user.target
